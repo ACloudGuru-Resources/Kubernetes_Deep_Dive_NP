@@ -5,16 +5,16 @@ metadata:
 spec:
   volumes:
     - name: data
-    persistentVolumeClaim:
-      claimName: pvc1
-containers:
-  - name: ubuntu-ctr
-    image: ubuntu:latest
-    command:
-    - /bin/bash
-    - "-c"
-    - "sleep 60m"
-    imagePullPolicy: IfNotPresent
-    volumeMounts:
-    - mountpath: /data
-      name: data
+      persistentVolumeClaim:
+        claimName: pvc1
+  containers:
+    - name: ubuntu-ctr
+      image: ubuntu:latest
+      command:
+      - /bin/bash
+      - "-c"
+      - "sleep 60m"
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+      - mountPath: /data
+        name: data
